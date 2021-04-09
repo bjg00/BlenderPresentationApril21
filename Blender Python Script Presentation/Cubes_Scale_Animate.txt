@@ -1,0 +1,15 @@
+import bpy
+
+cubes = bpy.data.collections["Cubes"].objects
+offset = 0
+
+for x in cubes:
+        x.scale = [0, 0, 0]
+        x.keyframe_insert(data_path = "scale", frame = 1 + offset)
+        x.scale = [1, 1, 5]
+        x.keyframe_insert(data_path = "scale", frame = 50 + offset)
+        x.scale = [1, 1, .5]
+        x.keyframe_insert(data_path = "scale", frame = 70 + offset)
+        x.scale = [1, 1, 1]
+        x.keyframe_insert(data_path = "scale", frame = 80 + offset)
+        offset += 1

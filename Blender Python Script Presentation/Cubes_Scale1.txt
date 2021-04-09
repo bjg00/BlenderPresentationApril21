@@ -1,0 +1,6 @@
+import bpy
+
+cubes = bpy.data.collections["Cubes"].objects
+
+for x in cubes:
+        x.scale = [.5, .5, .5]

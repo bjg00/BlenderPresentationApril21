@@ -1,0 +1,13 @@
+import bpy
+
+verts = [(0,0,0), (0,2,0), (2,2,0), (2,0,0), (0,0,2), (0,2,2), (2,2,2), (2,0,2)]
+faces = [(0,1,2,3), (7,6,5,4), (0,4,5,1), (1,5,6,2), (2,6,7,3), (3,7,4,9)]
+
+mesh = bpy.data.meshes.new("MyCube")
+object = bpy.data.objects.new("MyCube", mesh)
+
+bpy.context.collection.objects.link(object)
+object.location = (0,0,5)
+mesh.from_pydata(verts,[],faces)
+
+mesh.update(calc_edges=True)
